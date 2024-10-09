@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { LinksModule } from './links/links.module';
+import { ItemsModule } from './items/items.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Link } from './links/entities/link.entity';
+import { Item } from './items/entities/item.entity';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -14,10 +14,10 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [Link],
+      entities: [Item],
       synchronize: true,
     }),
-    LinksModule,
+    ItemsModule,
   ],
 })
 export class AppModule { }
